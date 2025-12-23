@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- UTF-8 character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+    <meta name="description" content="Between 150 and 160 characters (including spaces). Like the title, this is important for search engines"> <!-- Meta description -->
+    <title>Between 50 and 60 characters (including spaces)</title> <!-- Title text -->
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+   <header class="bg-white dark:bg-gray-900">
+    <nav x-data="{ isOpen: false }" class="relative bg-white dark:bg-gray-900">
+        <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center lg:px-24 xl:px-36">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="Logo">
+                </a>
+    
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
+
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Navigation links -->
+            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" 
+                class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                <div class="flex flex-col md:flex-row md:mx-6">
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Home</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Players</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Teams</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">About</a>
+                </div>
+    
+                <div class="flex justify-center md:block">
+                    <a class="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container px-6 py-16 mx-auto lg:px-24 xl:px-36">
+        <div class="items-center lg:flex">
+            <div class="w-full lg:w-1/2">
+                <div class="lg:max-w-lg">
+                    <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-5xl">
+                        Discover the World's <br> <span class="text-blue-500">Top 10 Soccer Players</span>
+                    </h1>
+                    
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">
+                        Explore profiles of the world’s greatest footballers — from legends like Messi and Ronaldo to emerging stars such as Haaland and Mbappé. Learn about their achievements, clubs, and contributions to the beautiful game.
+                    </p>
+                    
+                    <button class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                        Meet the Players
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+                <img class="w-full h-full lg:max-w-3xl" src="https://placehold.co/600x400" alt="Soccer players illustration">
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Page Container -->
+    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pt-8 pb-10 px-6 md:pt-10 md:pb-12 md:px-20 lg:pt-12 lg:pb-14 lg:px-28 xl:pt-14 xl:pb-16 xl:px-36">
+        <!-- Responsive grid layout and padding -->
+
+        <!-- Section 1: Lionel Messi -->
+        <section class="bg-gray-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Lionel Messi
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Lionel Messi" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Lionel Messi is an Argentine icon known for his playmaking, dribbling, and precision. The World Cup and multiple Ballon d’Or winner remains one of football’s all-time greats.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Lionel_Messi" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 2: Cristiano Ronaldo -->
+        <section class="bg-blue-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Cristiano Ronaldo
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Cristiano Ronaldo" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Cristiano Ronaldo is a Portuguese legend recognized for his strength and finishing. A five-time Ballon d’Or winner, he’s achieved success across England, Spain, Italy, and Portugal.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Cristiano_Ronaldo" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 3: Kylian Mbappé -->
+        <section class="bg-green-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Kylian Mbappé
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Kylian Mbappé" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Kylian Mbappé rose to fame as a teenager leading France to World Cup glory in 2018. His speed, finishing, and composure make him one of the game’s brightest stars.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Kylian_Mbapp%C3%A9" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 4: Erling Haaland -->
+        <section class="bg-yellow-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Erling Haaland
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Erling Haaland" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Erling Haaland is a Norwegian striker for Manchester City. With incredible pace and finishing, he quickly became one of the most prolific scorers in European football.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Erling_Haaland" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 5: Neymar Jr. -->
+        <section class="bg-red-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Neymar Jr.
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Neymar Jr." class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Neymar Jr. is a Brazilian forward celebrated for creativity and flair. Known for his dribbling and skill, he’s played for Barcelona, PSG, and the Brazilian national team.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Neymar" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 6: Kevin De Bruyne -->
+        <section class="bg-purple-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Kevin De Bruyne
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Kevin De Bruyne" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Kevin De Bruyne is a Belgian midfielder famed for creativity and precise passing. A vital part of Manchester City’s success, he’s considered among football’s top playmakers.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Kevin_De_Bruyne" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 7: Luka Modrić -->
+        <section class="bg-orange-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Luka Modrić
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Luka Modrić" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Luka Modrić, Croatia’s midfield leader, combines vision and control. The 2018 Ballon d’Or winner has led both Real Madrid and Croatia to success on the world stage.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Luka_Modri%C4%87" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 8: Mohamed Salah -->
+        <section class="bg-teal-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Mohamed Salah
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Mohamed Salah" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Mohamed Salah, Egypt’s captain, is known for his speed and finishing. At Liverpool, he has broken scoring records and won both the Premier League and Champions League.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Mohamed_Salah" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 9: Robert Lewandowski -->
+        <section class="bg-pink-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Robert Lewandowski
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Robert Lewandowski" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Robert Lewandowski, the Polish striker, is known for consistent goal scoring. A record-breaking forward for Bayern Munich and Barcelona, he defines professionalism and precision.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Robert_Lewandowski" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+        <!-- Section 10: Vinícius Júnior -->
+        <section class="bg-indigo-100 p-6 rounded-2xl shadow">
+            <h2 class="text-black font-sans font-semibold tracking-tighter text-xl md:text-2xl xl:text-3xl leading-snug mb-4">
+                Vinícius Júnior
+            </h2>
+
+            <img src="https://placehold.co/400x250" alt="Vinícius Júnior" class="mb-4 rounded-lg">
+
+            <p class="text-gray-800 font-serif font-normal text-base leading-relaxed mb-4">
+                Vinícius Júnior, the Brazilian winger for Real Madrid, is celebrated for his speed and flair. A rising star, he played a key role in Madrid’s Champions League victories.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">
+                Learn More
+            </a>
+        </section>
+
+    </main>
+
+</body>
+</html>

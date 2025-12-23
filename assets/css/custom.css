@@ -1,0 +1,339 @@
+/* Neema Peter STUID 77366*/
+html, body {
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    background-color: #0b0f19; /* fallback */
+    background-image:
+        linear-gradient(rgba(10, 10, 10, 0.1), rgba(10, 10, 10, 0.1)),
+        url("../img/bg-dark-texture.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Intro container spacing */
+.intro-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Intro content layout */
+.intro-content {
+    display: flex;
+    align-items: center; /* vertical alignment */
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: introFade 0.8s ease forwards;
+}
+
+/* Stack content on mobile */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Profile image styling */
+.intro-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 12px; /* soft square corners */
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+
+/* Text styling */
+.intro-text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--sky-400);
+}
+
+.intro-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    max-width: 560px;
+}
+
+/* Subtle fade-in animation */
+@keyframes introFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: keep other theme-dark elements as before */
+nav.theme-dark, nav.theme-dark ul.links-wrapper.active { background-color: #0f172a }
+header.theme-dark { background-color: #0f172a }
+section.theme-dark { background-color: #0f172a }
+footer.theme-dark { background-color: #0f172a }
+header .col-text h2, .col-1 > h3 { line-height: 1.8 }
+/* Background wrapper */
+.header-bg-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+/* Background image */
+.header-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* behind all content */
+}
+
+/* Dark overlay */
+.header-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.3); /* adjust opacity for visibility */
+    z-index: -1;
+}
+
+/* Intro container spacing */
+.intro-container {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Flex layout for image + text */
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    /* Fade-in animation */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: introFade 0.8s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Profile image */
+.intro-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+
+/* Text styling */
+.intro-text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--sky-400);
+}
+
+.intro-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    max-width: 560px;
+}
+
+/* Fade-in animation keyframes */
+@keyframes introFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Header section font and size */
+header h1 {
+    font-family: 'Poppins', sans-serif; /* Header font */
+    font-size: 2.5rem; /* Adjust size */
+    font-weight: 600;
+    color: var(--sky-400); /* Optional color */
+    margin-bottom: 1rem;
+}
+
+header h2 {
+    font-family: 'Poppins', sans-serif; /* Header subtext font */
+    font-size: 1.2rem; /* Adjust size */
+    font-weight: 400;
+    line-height: 1.7;
+    color: #cbd5e1; /* Light gray text for dark background */
+}
+
+/* Form labels and inputs font and size */
+#email-form label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+#email-form input,
+#email-form textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* Submit button font */
+#btn-submit {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+}
+
+/* Make theme-dark sections semi-transparent so background image shows */
+nav.theme-dark,
+header.theme-dark,
+section.theme-dark,
+footer.theme-dark {
+    background-color: rgba(15, 23, 42, 0.85); /* adjust opacity for readability */
+}
+
+/* Header fonts and sizes */
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* Form labels and inputs */
+#email-form label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+#email-form input,
+#email-form textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* Submit button */
+#btn-submit {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+}
+/* ===== Global Page Headings ===== */
+
+/* Main page heading (H1) */
+header.theme-dark h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--sky-400); /* same blue everywhere */
+    margin-bottom: 0.75rem;
+}
+
+/* Page subheading (H2) */
+header.theme-dark h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #cbd5e1;
+    max-width: 900px;
+}
+/* ===== Global Body Text ===== */
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #e5e7eb;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* Section headings */
+section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+section h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #e5e7eb;
+}
+/* ===== Page Intro Animations (Global) ===== */
+
+.page-intro {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: pageFadeUp 0.8s ease forwards;
+}
+
+.page-intro.delay-1 {
+    animation-delay: 0.15s;
+}
+
+.page-intro.delay-2 {
+    animation-delay: 0.3s;
+}
+
+@keyframes pageFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
